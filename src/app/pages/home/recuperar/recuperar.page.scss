@@ -1,0 +1,46 @@
+.nueva {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #fff;
+
+    background-image: url("../../../../assets/imgs/seguridad/seguridad.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    div {
+        text-align: center;
+        max-width: 310px;
+        box-shadow: 1px 1px 9px #8a8e93;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,0.7);
+        p {
+            color: #000;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 80%;
+            border: 1px solid #cacaca;
+            border-radius: 4px;
+            padding: 7px;
+            margin-bottom: 10px;
+            outline: none;
+            color: #000;
+        }
+
+        button {
+            width: 80%;
+            border-radius: 4px;
+            padding: 7px;
+            margin-bottom: 20px;
+            outline: none;
+            color: #fff;
+            font-size: 16px;
+            background-color: #2b5bcc;
+        }
+    }
+}

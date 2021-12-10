@@ -1,0 +1,227 @@
+body {
+    background: #eeeeee;
+    font-family: cursive;
+}
+
+.container {
+    width: 600px;
+    min-height: 500px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 10px 50px 50px 50px;
+    border-radius: 8px;
+    border: 2px solid #cbcbcb;
+    box-shadow: 10px 15px 5px #cbcbcb;
+}
+
+.container h1 {
+    background: #405ca1;
+    color: #fff;
+    font-size: 60px;
+    text-align: center;
+    padding: 2px 0 13px 0;
+    border-radius: 50px;
+}
+
+#question {
+    font-size: 30px;
+    color: #5a6772;
+}
+
+.button-grp {
+    margin-top: 30px;
+}
+
+#btn0,
+#btn1,
+#btn2,
+#btn3 {
+    background: #405ca1;
+    width: 250px;
+    font-size: 20px;
+    border: 1px solid #1d3c6a;
+    border-radius: 50px;
+    margin: 10px 40px 10px 7.6px;
+    padding: 10px 10px;
+    color: #fff;
+}
+
+#btn0:hover,
+#btn1:hover,
+#btn2:hover,
+#btn3:hover {
+    cursor: pointer;
+    background: #2d85a4; /*come here*/
+}
+
+#btn0:focus,
+#btn1:focus,
+#btn2:focus,
+#btn3:focus {
+    outline: 0;
+}
+
+#progress {
+    color: #2b2b2b;
+    font-size: 18px;
+}
+
+.ready {
+    //margin-top: 60px;
+    text-align: center;
+    font-family: safe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    //margin-top: 60px;
+    height: 100%;
+    height: -webkit-fill-available;
+    background-image: url("./../../../../assets/imgs/trivia/trivia.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    div {
+        max-width: 500px;
+        p {
+            margin: 0;
+            font-size: 30px;
+            animation: pulse 1s infinite;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        button {
+            background: #0783bc;
+            color: #fff;
+            padding: 13px;
+            font-size: 30px;
+            width: 230px;
+            border-radius: 8px;
+            margin-top: 22px;
+            outline: none;
+            animation: pulse 2s infinite;
+        }
+
+        .preguntosa {
+            padding: 20px;
+
+            border-radius: 8px;
+            box-shadow: 1px 1px 15px #979797;
+            border: 4px solid #fff;
+            position: relative;
+            width: 318px;
+            margin: auto;
+            p {
+                max-width: 300px;
+                font-size: 25px;
+                animation: pulse 5s infinite;
+            }
+
+            .signo {
+                font-size: 91px;
+                position: absolute;
+                left: -55px;
+                top: 28px;
+                color: #fff;
+                text-shadow: 1px 1px 30px #fff;
+            }
+        }
+
+        .mala {
+            box-shadow: 1px 1px 15px #ec0000;
+            border: 4px solid #ec0000;
+        }
+
+        .biena {
+            box-shadow: 1px 1px 15px #0783bc;
+            border: 4px solid #0783bc;
+        }
+
+        .respuestas {
+            width: 100%;
+            margin-top: 20px;
+            .respuesta {
+                border: 4px solid #0783bc;
+                border-radius: 8px;
+                padding: 10px;
+                box-shadow: 1px 1px 30px #0783bc;
+                display: inline-flex;
+                width: 48%;
+                margin: 1%;
+                color: #fff;
+                cursor: pointer;
+                p {
+                    margin: 0;
+                    color: #fff;
+                    font-size: 20px;
+                    animation: none;
+
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+            }
+            @media (max-width: 520px) {
+                .respuesta {
+                    width: 98%;
+                }
+            }
+        }
+
+        @media (max-width: 520px) {
+            .preguntosa {
+                width: 100%;
+                p {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+.tiempo {
+    position: absolute;
+    color: red;
+    font-family: "digital";
+    font-weight: 900;
+    font-size: 25px;
+    top: 60px;
+    right: 20px;
+    animation: pulse 1s infinite;
+}
+
+.mal {
+    color: red !important;
+    text-shadow: 1px 1px 40px #ec0000 !important;
+}
+
+.bien {
+    color: #0783bc !important;
+    text-shadow: 1px 1px 40px #0783bc !important;
+}
+
+.intenta {
+    background-color: red !important;
+    width: 100% !important;
+}
+
+.bienn {
+    background-color: #0783bc !important;
+    width: 100% !important;
+}
+
+.nivel {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    color: #fff;
+    p{
+        margin: 0;
+        font-size: 20px;
+        
+    }
+}

@@ -1,0 +1,110 @@
+<section class="lgn">
+  <section class="cmpt-login animated bounceIn" id="btn-scroll">
+    <div class="img-container">
+      <img src="assets/imgs/login/login.png" alt="">
+
+
+    </div>
+    <div class="img-logo">
+      <img src="assets/imgs/logo-sup.png" alt="">
+    </div>
+
+    <section class="input-login" *ngIf="invitado == 0">
+
+      <div class="input-format">
+        <label for="input-mail">Edad *</label>
+        <input [(ngModel)]="data.edad.value" type="number" id="input-mail" placeholder="18"
+          [ngClass]="{'error': data.edad.error}">
+
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Municipio *</label>
+        <select [(ngModel)]="data.municipio.value" [ngClass]="{'error': data.municipio.error}">
+          <option [value]="municipio.name" *ngFor="let municipio of municipios"> {{ municipio.label }} </option>
+        </select>
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Perfil *</label>
+        <select [(ngModel)]="data.rol.value" [ngClass]="{'error': data.rol.error}">
+          <option [value]="rol.value" *ngFor="let rol of roles"> {{ rol.label }} </option>
+        </select>
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Username *</label>
+        <input [(ngModel)]="data.email.value" type="text" id="input-mail" placeholder="educacion@gmail.com"
+          [ngClass]="{'error': data.email.error}">
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Nombre *</label>
+        <input [(ngModel)]="data.nombre.value" type="text" id="input-mail" placeholder="Pablo"
+          [ngClass]="{'error': data.nombre.error}">
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Apellidos *</label>
+        <input [(ngModel)]="data.apellido_paterno.value" type="text" id="input-mail" placeholder="Gutierrez"
+          [ngClass]="{'error': data.apellido_paterno.error}">
+      </div>
+
+      <div class="input-format-dual">
+        <label for="input-pass">Contraseña *</label>
+        <input [(ngModel)]="data.pass.value" type="password" id="input-pass" placeholder="******"
+          [ngClass]="{'error': data.pass.error}">
+        <div class="icon-input" (touchstart)="change()" (touchend)="change()">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div class="input-format">
+        <label for="input-pass">Confirmar contraseña *</label>
+        <input [(ngModel)]="data.confirm_pass.value" type="password" id="input-pass2" placeholder="******"
+          [ngClass]="{'error': data.confirm_pass.error}">
+      </div>
+
+
+
+
+    </section>
+    <div class="btn-ind register" *ngIf="invitado == 0">
+      <button (click)="register()">Registrarme</button>
+    </div>
+
+    <section class="input-login" *ngIf="invitado == 1">
+      <div class="input-format">
+        <label for="input-mail">Edad *</label>
+        <input [(ngModel)]="dataInvitado.edad.value" type="number" id="input-mail" placeholder="18"
+          [ngClass]="{'error': dataInvitado.edad.error}">
+
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Municipio *</label>
+        <select [(ngModel)]="dataInvitado.municipio.value" [ngClass]="{'error': dataInvitado.municipio.error}">
+          <option [value]="municipio.name" *ngFor="let municipio of municipios"> {{ municipio.label }} </option>
+        </select>
+      </div>
+
+      <div class="input-format">
+        <label for="input-mail">Perfil *</label>
+        <select [(ngModel)]="dataInvitado.rol.value" [ngClass]="{'error': dataInvitado.rol.error}">
+          <option [value]="rol.value" *ngFor="let rol of roles"> {{ rol.label }} </option>
+        </select>
+      </div>
+
+    </section>
+
+    <div class="btn-ind register" *ngIf="invitado == 1">
+      <button (click)="registerInvitado()">Registrarme</button>
+    </div>
+  </section>
+
+  <div class="backing">
+    <button (click)="backing()"><i class="material-icons">arrow_back_ios</i></button>
+  </div>
+
+
+</section>

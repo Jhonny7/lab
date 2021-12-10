@@ -1,0 +1,50 @@
+.buscando {
+    img {
+        width: 10%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3%;
+    }
+
+    input {
+        width: 87%;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px;
+        border: 1px solid #cacaca;
+        border-radius: 20px;
+        outline: none;
+    }
+}
+
+.central {
+    text-align: center;
+    .sec {
+        display: inline-block;
+        margin: 1%;
+        width: 48%;
+        vertical-align: middle;
+        img {
+            max-width: 140px;
+        }
+    }
+}
+
+.enimg {
+    width: 20%;
+    display: inline-block;
+    vertical-align: middle;
+    img {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+    }
+}
+
+.secr {
+    padding: 20px;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

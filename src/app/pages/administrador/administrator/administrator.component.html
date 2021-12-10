@@ -1,0 +1,86 @@
+
+<fieldset *ngFor="let s of sections">
+  <legend>
+    <p>{{ s.name }}</p>
+  </legend>
+
+  <section class="drop" *ngIf="s.countFiles == 1" (drop)="s.onDrop($event)" (dragover)="onDragOver($event,s)"
+    (dropover)="onDropOver($event,s)">
+
+    <div class="img-drag">
+      <img src="assets/imgs/noAvail.jpeg" alt="" *ngIf="!s?.files[0] && !s.idArchivo">
+      <img [src]="s?.files[0].b64Security" alt="" *ngIf="s?.files[0] && !s.idArchivo">
+      <img [src]="env.getImagenIndividual + s.idArchivo" alt="" *ngIf="s.idArchivo">
+      (No es la imagen final)
+
+      <div class="delete-img" *ngIf="s?.files[0] || s.idArchivo" (click)="s.reset()">
+        x
+      </div>
+
+      <div class="subr" (click)="s.upload()" *ngIf="s?.files[0]">
+        <p>Subir</p>
+      </div>
+    </div>
+    <div class="drag" id="drag-{{s.id}}">
+      <p>Arrastra tu archivo o click para seleccionar</p>
+      <input type="file" name="file" id="filer-{{ s.id }}" class="inputfile" (change)="s.change($event)" />
+      <label for="filer-{{ s.id }}" style="display: inline-block;width: 100%;outline: none;" class="labels">
+        <button style="margin: 0px;padding: 10px;cursor: pointer;" class="boton-file">
+          Cargar
+        </button>
+      </label>
+    </div>
+  </section>
+
+  <section class="drop " *ngIf="s.countFiles > 1 || s.countFiles == -1" (drop)="s.onDrop($event)"
+    (dragover)="onDragOver($event,s)" (dropover)="onDropOver($event,s)">
+    <div class="drag more-images" id="drag-{{s.id}}">
+      <p>Arrastra tu archivo o click para seleccionar</p>
+      <input type="file" name="file" id="filer-{{ s.id }}" class="inputfile" (change)="s.change($event)" />
+      <label for="filer-{{ s.id }}" style="display: inline-block;width: 100%;outline: none;" class="labels">
+        <button style="margin: 0px;padding: 10px;cursor: pointer;" class="boton-file">
+          Cargar
+        </button>
+      </label>
+    </div>
+
+    <section class="archives scrolling-wrapper ">
+      <div class="cont-img" *ngFor="let f of s.files; let j = index">
+        <img [src]="f.b64Security" alt="">
+        <div class="entradas">
+          <input type="text" placeholder="Nombre" [(ngModel)]="f.namer">
+          <textarea placeholder="Descripción" id="" cols="30" rows="10" [(ngModel)]="f.descripcion"></textarea>
+        </div>
+        <div class="delete-img" (click)="s.reset(s.files, j)">
+          x
+        </div>
+
+        <div class="subr sbr" (click)="s.upload(j,f)">
+          <p>Subir</p>
+        </div>
+      </div>
+      <div class="cont-img" *ngFor="let element of s.elements; let k = index">
+        <img [src]="env.getImagenIndividual + element.id_archivo" alt="" *ngIf="!element.b64"
+          (click)="s.inputClc(element)">
+        <img [src]="element.b64" alt="" *ngIf="element.b64">
+
+        <input type="file" name="file" id="filer-{{ element.id }}" class="inputfile"
+          (change)="s.otherImg($event,element)" />
+
+
+        <div class="entradas">
+          <input type="text" placeholder="Nombre" [(ngModel)]="element.nombre">
+          <textarea placeholder="Descripción" id="" cols="30" rows="10" [(ngModel)]="element.descripcion"></textarea>
+        </div>
+
+        <div class="delete-img" (click)="s.reset(element.id_archivo, k, true)">
+          x
+        </div>
+        <div class="subr sbr" (click)="s.update(element)">
+          <p>Actualizar</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+</fieldset>

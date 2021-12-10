@@ -1,0 +1,33 @@
+<app-header [title]="'Directorio'" [backActive]="true"></app-header>
+
+<ion-content>
+  <div class="containers">
+    
+    <div class="content" (mouseenter)="showSocialMedia(true, item)" (mouseleave)="showSocialMedia(false, item)" *ngFor="let item of directorio">
+      <div id="card" class="card">
+          <div class="firstinfo">
+            <section class="seccion"><img [src]="item.url" /></section>
+              <div class="profileinfo dvd">
+                  <h1>{{item.nombre_contacto}}</h1>
+                  <h3>+52 {{item.telefono}}</h3>
+                  <p class="bio"><strong>Municipio: </strong> {{item.municipio}}</p>
+                  <p class="bio"><strong>Dirección: </strong> {{item.domicilio}}</p>
+                  <p class="bio"><strong>Lugar: </strong> {{item.nombre_lugar}}</p>
+                  <p class="bio"><strong>Email: </strong> {{item.email}}</p>
+                  <a style="float: right; margin: 10px 0px 0px 20px;" class="bio" [href]="item.ubicacion_maps">Abrir ubicacion del lugar</a>
+              </div>
+
+              <div class="dvd-srvs">
+                <p *ngFor="let s of item.servicios.toString().split(',')">
+                  {{ s }}
+                </p>
+              </div>
+          </div>
+      </div>
+      <div  [ngClass]="item.socialMedia === true ? 'showAnimation' : 'hideAnimation'" class="badgescard"> 
+        <ion-icon (click)="goToLink(badge.link)" name="logo-{{badge.tipo}}" *ngFor="let badge of item.links"></ion-icon>
+      </div>
+  </div>
+    
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+<!-- Slider main container -->
+<div class="swiper-container swiper-{{epochNumber}}" [style.height]="" (window:resize)="onResize($event)" id="swp">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide" *ngFor="let g of galleryItems">
+      <section class="contenedor-img">
+        <img [src]="g.image" alt="" id="in">
+        
+      </section>
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+
+</div>

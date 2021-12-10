@@ -1,0 +1,26 @@
+<ion-header class="animated fadeInRight" [class]="themeService.getThemeClass()">
+  <ion-toolbar class="primary">
+    <ion-buttons slot="start">
+
+      <ion-button (click)="back()" *ngIf="backActive">
+        <ion-icon name="chevron-back" style="font-size: 2.4rem;"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+
+    <ion-title [style]="{'margin-left': backActive ? '-5%' : '0'}"
+    *ngIf="platform.is('android')">{{ title | translate }}</ion-title>
+    <ion-title *ngIf="platform.is('ios')">{{ title | translate }}</ion-title>
+
+    <!-- <ion-buttons slot="end">
+
+      <ion-button (click)="verOpciones($event)">
+        <p id="23"></p>
+        <ion-icon name="ellipsis-vertical-outline" style="font-size: 2.4rem;" id="opc-id"></ion-icon>
+      </ion-button>
+
+    </ion-buttons> -->
+
+    
+  </ion-toolbar>
+</ion-header>

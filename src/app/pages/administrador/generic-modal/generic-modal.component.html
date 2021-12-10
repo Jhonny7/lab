@@ -1,0 +1,424 @@
+<section class="product-create">
+    <div class="close-exit" (click)="onConfirmClick()">
+        <i class="material-icons">clear</i>
+    </div>
+
+    <section [ngSwitch]="data.id">
+
+        <section *ngSwitchCase="1">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Descripción *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.label" placeholder="Biología...">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Imagen</label>
+                <label for="filere" class="ctn-img">
+                    <img src="assets/imgs/noAvail.jpeg" alt=""
+                        *ngIf="!data.current.url && data.current.b64.length == 0">
+                    <img [src]="data.current.url" alt="" *ngIf="data.current.url && data.current.b64.length == 0">
+                    <img [src]="data.current.b64" alt="" *ngIf="!data.current.url && data.current.b64.length > 0">
+                </label>
+                <input type="file" id="filere" style="visibility: hidden;padding: 0;height: 0px;"
+                    (change)="changeImg($event)">
+            </div>
+        </section>
+
+        <section *ngSwitchCase="4">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Perfil *</label>
+                <select [(ngModel)]="data.current.id_tipo_usuario">
+                    <option [value]="tema.value" *ngFor="let tema of perfiles">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Tema *</label>
+                <select [(ngModel)]="data.current.id_tema">
+                    <option [value]="tema.id" *ngFor="let tema of temas">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Nombre *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.nombre" placeholder="Cápsula...">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Descripción *</label>
+                <ckeditor [(ngModel)]="data.current.descripcion" [config]="editorConfig" [editor]="Editor"
+                    (ready)="onReady($event)"></ckeditor>
+
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Video</label>
+                <label for="filsss" class="ctn-img">
+                    <img src="assets/imgs/noAvail.jpeg" alt=""
+                        *ngIf="!data.current.url && data.current.b64.length == 0">
+
+                    <video controls *ngIf="data.current.url && data.current.b64.length == 0">
+                        <source [src]="img + data.current.url">
+                        Your browser does not support HTML video.
+                    </video>
+
+                    <video controls *ngIf="!data.current.url && data.current.b64.length > 0">
+                        <source [src]="data.current.b64">
+                        Your browser does not support HTML video.
+                    </video>
+
+                </label>
+                <label for="filsss" *ngIf="(data.current.url && data.current.b64.length == 0) || 
+                (!data.current.url && data.current.b64.length > 0)" style="cursor: pointer;
+                background-color: #3498db;
+                color: #fff;
+                border-radius: 4px;margin-left: 6px;padding: 7px;margin-top: 0;">Cargar video</label>
+                <input type="file" id="filsss" style="visibility: hidden;padding: 0;height: 0px;"
+                    (change)="changeVideo($event)">
+            </div>
+        </section>
+
+        <section *ngSwitchCase="2">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Perfil *</label>
+                <select [(ngModel)]="data.current.id_tipo_usuario">
+                    <option [value]="tema.value" *ngFor="let tema of perfiles">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Tema *</label>
+                <select [(ngModel)]="data.current.id_tema">
+                    <option [value]="tema.id" *ngFor="let tema of temas">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Pregunta *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.pregunta" placeholder="¿Qué es...">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Respuesta *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.respuesta"
+                    placeholder="La biología es la ciencia que...">
+            </div>
+        </section>
+
+        <section *ngSwitchCase="3">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Perfil *</label>
+                <select [(ngModel)]="data.current.id_tipo_usuario">
+                    <option [value]="tema.value" *ngFor="let tema of perfiles">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Tema *</label>
+                <select [(ngModel)]="data.current.id_tema">
+                    <option [value]="tema.id" *ngFor="let tema of temas">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Complejidad *</label>
+                <select [(ngModel)]="data.current.id_complejidad">
+                    <option [value]="complejidad.id" *ngFor="let complejidad of complejidades">{{ complejidad.label }}
+                    </option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Pregunta *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.pregunta" placeholder="¿Qué es...">
+            </div>
+
+            <div class="input-container" style="width: 100%;position: relative;">
+                <label for="nomre">Respuesta</label>
+                <input type="text" id="nombre" [(ngModel)]="respuestaTemporal" placeholder="¿Qué es...">
+                <button class="aniadir" (click)="aniadir()">Añadir</button>
+            </div>
+
+
+            <section class="respuestas">
+                <p>Respuestas</p>
+                <div>
+
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                        [(ngModel)]="data.current.respuesta">
+                        <mat-radio-button class="example-radio-button"
+                            *ngFor="let categoria of data.current.respuestas; let i = index" [value]="categoria.id"
+                            (change)="cambio($event)">
+                            {{ categoria.respuesta }}
+                            <button (click)="remove(i)" class="borrad">
+                                <span class="material-icons-outlined">
+                                    close
+                                </span>
+                            </button>
+                        </mat-radio-button>
+                    </mat-radio-group>
+
+
+                </div>
+            </section>
+        </section>
+
+        <section *ngSwitchCase="5">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Servicios *</label>
+
+                <mat-checkbox class="example-margin" *ngFor="let tema of servicios" [(ngModel)]="tema.checked">
+                    <label>{{ tema.label }}</label>
+                </mat-checkbox>
+
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Municipio *</label>
+                <select [(ngModel)]="data.current.estado_combo">
+                    <option [value]="tema.name" *ngFor="let tema of municipios">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Domicilio *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.domicilio" placeholder="Calle P Sherman..">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Nombre del lugar *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.nombre_lugar"
+                    placeholder="Escuela universitaria..">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Nombre contacto</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.nombre_contacto"
+                    placeholder="Profr. Alfredo Peniche..">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Teléfono</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.telefono" placeholder="5559994441">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Email</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.email" placeholder="transfo@transfo.com">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Link maps</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.ubicacion_maps" placeholder="google.maps.com">
+            </div>
+
+            <div class="input-container" style="width: 100%;position: relative;">
+                <label for="nomre">Red social</label>
+                <div>
+                    <select [(ngModel)]="redTemporal.tipo" class="double">
+                        <option [value]="tema.id" *ngFor="let tema of redes">{{ tema.label }}</option>
+                    </select>
+                    <input type="text" id="nombre" [(ngModel)]="redTemporal.link" placeholder="Link" class="double">
+
+                </div>
+                <button class="aniadir" (click)="aniadirRed()">Añadir</button>
+            </div>
+
+            <div class="reds">
+                <section *ngFor="let red of redTemporales; let i = index" class="red">
+                    <p>{{returnType(red.tipo)}} - {{red.link}}</p>
+                    <button (click)="removeRed(i)">Borrar</button>
+                </section>
+            </div>
+        </section>
+
+        <section *ngSwitchCase="6">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Perfil *</label>
+                <select [(ngModel)]="data.current.id_tipo_usuario">
+                    <option [value]="tema.value" *ngFor="let tema of perfiles">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Tema *</label>
+                <select [(ngModel)]="data.current.id_tema">
+                    <option [value]="tema.id" *ngFor="let tema of temas">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Nombre *</label>
+                <input type="text" id="nombre" [(ngModel)]="data.current.nombre" placeholder="Nombre..">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Descripción *</label>
+                <ckeditor [(ngModel)]="data.current.descripcion" [config]="editorConfig" [editor]="Editor"
+                    (ready)="onReady($event)"></ckeditor>
+
+            </div>
+
+            <div class="input-container" style="width: 100%;position: relative;">
+                <label for="nomre">Links videos</label>
+                <div>
+                    <select [(ngModel)]="redTemporal.tipo" class="double">
+                        <option [value]="tema.id" *ngFor="let tema of redes">{{ tema.label }}</option>
+                    </select>
+                    <input type="text" id="nombre" [(ngModel)]="redTemporal.link" placeholder="Link" class="double">
+
+                </div>
+                <button class="aniadir" (click)="aniadirVideo()">Añadir</button>
+            </div>
+
+            <div class="reds">
+                <section *ngFor="let red of redTemporales; let i = index" class="red">
+                    <p>{{returnType(red.tipo)}} - {{red.link}}</p>
+                    <button (click)="removeVideo(i)">Borrar</button>
+                </section>
+            </div>
+
+            <section>
+
+
+                <section class="drop " *ngIf="s.countFiles > 1 || s.countFiles == -1" (drop)="s.onDrop($event)"
+                    (dragover)="onDragOver($event,s)" (dropover)="onDropOver($event,s)">
+
+                    <div class="droap" id="drag-{{s.id}}">
+
+                        <label for="filer-{{ s.id }}" style="cursor: pointer;">
+                            <p>Arrastra tu archivo o click <a>aquí</a> para seleccionar</p>
+                        </label>
+                        <input type="file" name="file" id="filer-{{ s.id }}" class="inputfile"
+                            (change)="s.change($event)" />
+                    </div>
+
+
+                    <section class="archives scrolling-wrapper ">
+                        <div class="cont-img" *ngFor="let f of s.files; let j = index">
+                            <img [src]="f.b64Security" alt="">
+                            <div class="delete-img" (click)="s.reset(s.files, j)">
+                                x
+                            </div>
+
+                            <div class="subr sbr" (click)="s.upload(j,f)">
+                                <p>Subir</p>
+                            </div>
+                        </div>
+                        <div class="cont-img" *ngFor="let element of s.elements; let k = index">
+                            <img [src]="element.url" alt="" *ngIf="!element.b64"
+                                (click)="s.inputClc(element)">
+                            <img [src]="element.b64" alt="" *ngIf="element.b64">
+
+                            <input type="file" name="file" id="filer-{{ element.id }}" class="inputfile"
+                                (change)="s.otherImg($event,element)" />
+
+
+                            <div class="delete-img" (click)="s.reset(element.id_archivo, k, true)">
+                                x
+                            </div>
+
+                        </div>
+                    </section>
+
+                </section>
+            </section>
+        </section>
+
+        <section *ngSwitchCase="7">
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Perfil *</label>
+                <select [(ngModel)]="data.current.id_tipo_usuario">
+                    <option [value]="tema.value" *ngFor="let tema of perfiles">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Tema *</label>
+                <select [(ngModel)]="data.current.id_tema">
+                    <option [value]="tema.id" *ngFor="let tema of temas">{{ tema.label }}</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Imagen</label>
+                <label for="filere2" class="ctn-img">
+                    <img src="assets/imgs/noAvail.jpeg" alt=""
+                        *ngIf="!data.current.url && data.current.b64.length == 0">
+                    <img [src]="data.current.url" alt="" *ngIf="data.current.url && data.current.b64.length == 0">
+                    <img [src]="data.current.b64" alt="" *ngIf="!data.current.url && data.current.b64.length > 0">
+                </label>
+                <input type="file" id="filere2" style="visibility: hidden;padding: 0;height: 0px;"
+                    (change)="changeImg($event)">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Nombre del examen *</label>
+                <input type="text" id="nombreee" [(ngModel)]="data.current.nombre" placeholder="Diagnóstico...">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Pregunta *</label>
+                <input type="text" id="nombre" [(ngModel)]="preguntaTemporal" placeholder="¿Qué es...">
+            </div>
+
+            <div class="input-container" style="width: 100%;">
+                <label for="nomre">Tipo de respuesta *</label>
+                <select [(ngModel)]="tipoRespuesta">
+                    <option value="1">Opción múltiple</option>
+                    <option value="2">Respuesta Abierta</option>
+                </select>
+            </div>
+
+            <div class="input-container" style="width: 100%;position: relative;">
+                <label for="nomre">Respuesta</label>
+                <input type="text" id="nombre" [(ngModel)]="respuestaTemporal" placeholder="¿Qué es...">
+                <button class="aniadir" (click)="aniadir2()">Añadir</button>
+            </div>
+
+
+            <section class="respuestas" style="position: relative;">
+                <p>Respuestas</p>
+                <div>
+
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                        [(ngModel)]="data.current.respuesta">
+                        <mat-radio-button class="example-radio-button"
+                            *ngFor="let categoria of respuestasTemporales; let i = index" [value]="categoria.id"
+                            (change)="cambio($event)">
+                            {{ categoria.respuesta }}
+                            <button (click)="remove(i)" class="borrad">
+                                <span class="material-icons-outlined">
+                                    close
+                                </span>
+                            </button>
+                        </mat-radio-button>
+                    </mat-radio-group>
+
+
+                </div>
+
+                <button class="aniadir" (click)="save()">Guardar pregunta</button>
+            </section>
+
+            <section class="respuestas" *ngIf="examenTemporal.length > 0">
+                <p>Actual Examen</p>
+                <div *ngFor="let e of examenTemporal">
+                    <p>{{ e.pregunta }}</p>
+                </div>
+            </section>
+        </section>
+    </section>
+
+
+    <div class="btn-end">
+        <button (click)="add()">{{ data.status ? 'Actualizar' : 'Agregar' }}</button>
+    </div>
+</section>

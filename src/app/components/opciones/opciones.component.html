@@ -1,0 +1,25 @@
+<section class="opciones">
+
+  <div class="option-pane" *ngFor="let opc of optionPanes" (click)="opc.action()">
+    <ion-icon [name]="opc.icon"></ion-icon>
+    <p>{{ opc.title | translate }}</p>
+  </div>
+
+  <p class="title">{{'options.theme' | translate}}</p>
+
+  <div class="themes">
+    <section *ngFor="let theme of themes" class="theme">
+      <div [style]="{'background-color': theme.color}" class="around" (click)="changeTheme(theme)"></div>
+    </section>
+  </div>
+
+  <p class="title">{{'options.language' | translate}}</p>
+
+  <div class="themes">
+    <section *ngFor="let language of languages" class="theme">
+      <div class="around" (click)="changeLanguage(language)">
+        <img [src]="language.icon" alt="">
+      </div>
+    </section>
+  </div>
+</section>

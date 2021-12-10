@@ -1,0 +1,73 @@
+.temas {
+    margin-top: 60px;
+    text-align: center;
+    padding: 0 25px;
+}
+
+@media (max-width: 3000px) {
+    .temas {
+        text-align: left;
+    }
+}
+
+@media (max-width: 750px) {
+    .temas {
+        text-align: center;
+    }
+}
+
+.sbs {
+    padding-top: 44px;
+
+    p {
+        margin: 0;
+        font-size: 20px;
+        text-align: center;
+        margin: 20px;
+        color: #000;
+    }
+
+    div {
+        font-size: 18px;
+        padding: 10px;
+        border-bottom: 1px solid #e0e0e0;
+        cursor: pointer;
+        color: #000;
+    }
+}
+
+.galria {
+    margin-top: 44px;
+}
+
+.t-sbs {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+p {
+    color: #000;
+}
+li {
+    color: #000;
+}
+
+.lnks {
+    p {
+        margin: 0;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .ar {
+        padding: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        color: #0783bc;
+        border-bottom: 1px solid #cacaca;
+        margin-bottom: 10px;
+    }
+}

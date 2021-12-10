@@ -1,0 +1,84 @@
+<app-header [title]="'Trivia'" [backActive]="true"></app-header>
+
+<ion-content>
+  <section *ngIf="data.step == 1" class="ready animated fadeInDown">
+
+    <section *ngIf="data.nivelUser && data.nivelUser?.length > 0" class=" nivel animated fadeInLeft">
+      <p>Tu nivel actual es: <strong>{{ data.nivelUser }}</strong></p>
+    </section>
+    <div>
+      <p>Estas listo?</p>
+
+      <button (click)="empezar()">Empezar</button>
+
+      <button (click)="reset()">Resetear nivel</button>
+    </div>
+  </section>
+
+  <section *ngIf="data.step == 2" class="ready animated fadeInUp">
+    <section *ngIf="data.nivelUser && data.nivelUser?.length > 0" class="nivel animated fadeInLeft" style="top:115px;">
+      <p>Tu nivel actual es: <strong>{{ data.nivelUser }}</strong></p>
+    </section>
+    <p class="tiempo">00:{{tiempo > 9 ? tiempo : '0'+tiempo}}</p>
+    <div *ngIf="triviaActual && triviaActual.length > 0">
+      <section class="preguntosa">
+        <p>{{ triviaActual[data.preguntaActual]?.json.pregunta }}</p>
+
+        <p class="signo">{{ data.preguntaActual + 1 }}.-</p>
+      </section>
+
+      <section class="respuestas">
+        <div class="respuesta" *ngFor="let r of triviaActual[data.preguntaActual]?.json.respuestas" (click)="evalua(r)">
+          <p>
+            {{ r.respuesta }}
+          </p>
+        </div>
+
+      </section>
+    </div>
+
+    <div *ngIf="!triviaActual || triviaActual.length == 0">
+      <p>Proximamente nuevas trivias</p>
+      <p>Espéralas</p>
+
+      <button (click)="regresar()">Regresar</button>
+    </div>
+
+  </section>
+
+  <section *ngIf="data.step == 3" class="ready animated fadeInRight">
+    <!-- <div *ngIf="!data.aprobado">
+      <section class="preguntosa mala">
+        <p>Oops!</p>
+        <p>Más suerte la próxima vez</p>
+        <p class="signo mal">X</p>
+      </section>
+      <button class="intenta" (click)="intenta()">Intentar nuevamente</button>
+    </div>
+    <div *ngIf="data.aprobado">
+      <section class="preguntosa biena">
+        <p>Waow!</p>
+        <p>Contestaste la trivia correctamente</p>
+        <p class="signo bien">✓</p>
+      </section>
+      <button class="bienn" (click)="intenta()">Continuar</button>
+    </div> -->
+    <div>
+      <section class="preguntosa biena">
+        <p>Trivia terminada</p>
+        <p>Tus respuestas: </p>
+        <p class="signo vien">✓</p>
+
+        
+
+      </section>
+
+      <div *ngFor="let p of data.almacenRespuestas">
+        <p style="font-size: 17px;margin: 10px;">{{ p.pregunta }} - <strong>{{ p.isFine ? '✓' : 'x'}}</strong></p>
+      </div>
+
+      <button class="bienn" (click)="intenta()">Empezar</button>
+      <button class="bienn" (click)="termina()">Terminar</button>
+    </div>
+  </section>
+</ion-content>

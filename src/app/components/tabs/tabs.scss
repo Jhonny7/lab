@@ -1,0 +1,41 @@
+.tabbs {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #a3a3a3;
+  transition: 300ms;
+  border-radius: 20px 20px 0 0;
+  background-color: #fff;
+  .tab-ind {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    transition: 300ms;
+    .no-active {
+      padding: 5px;
+      transition: 300ms;
+      //transition: 400ms;
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      ion-icon {
+        font-size: 18px;
+      }
+    }
+
+    .activo {
+      transition: 400ms;
+      position: relative;
+      padding: 5px 5px 10px 5px;
+      p {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      ion-icon {
+        font-size: 20px;
+      }
+    }
+  }
+}

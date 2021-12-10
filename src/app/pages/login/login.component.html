@@ -1,0 +1,47 @@
+<section class="lgn" > 
+  <section class="cmpt-login animated bounceIn" id="btn-scroll">
+    <div class="img-container">
+      <img src="assets/imgs/login/login.png" alt="">
+    </div>
+    <div class="img-logo">
+      <img src="assets/imgs/logo-sup.png" alt="">
+    </div>
+  
+    <section class="input-login">
+      <div class="input-format">
+        <label for="input-mail">Username *</label>
+        <input [(ngModel)]="data.email.value" type="text" id="input-mail" placeholder="educacion@gmail.com" [ngClass]="{'error': data.email.error}">
+      </div>
+  
+      <div class="input-format-dual">
+        <label for="input-pass">Contraseña *</label>
+        <input [(ngModel)]="data.pass.value" type="password" id="input-pass3" placeholder="******" [ngClass]="{'error': data.pass.error}">
+        <div class="icon-input" (touchstart)="change()" (touchend)="change()">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+      </div>
+  
+      <div class="btn-ind">
+        <button (click)="login()">Ingresar</button>
+      </div>
+
+      <div class="btn-dual" style="margin-top: 10px;">
+        <!-- <p>{{ 'login.lost_password' | translate }}</p> -->
+        <p (click)="router.navigateByUrl('/register/0')">Registrarme</p>
+        <p (click)="router.navigateByUrl('/register/1')">Entrar como invitado</p>
+
+        <p (click)="recuperar()">Olvide mi contraseña</p>
+      </div>
+  
+      <!-- <div class="btn-dual">
+        <button (click)="signIn()">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </button>
+  
+        <button (click)="loginGoogle()">
+          <ion-icon name="logo-google"></ion-icon>
+        </button>
+      </div> -->
+    </section>
+  </section>
+</section>

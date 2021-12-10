@@ -1,0 +1,195 @@
+.header-md::after {
+  background-image: none !important;
+}
+
+ion-title {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 12px;
+  padding-inline: 0;
+}
+
+/* .toolbar-title {
+  padding: 0px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #000;
+  pointer-events: auto;
+} */
+
+ion-content {
+  margin-top: 44px;
+}
+
+ion-fab[bottom] {
+  bottom: 65px;
+}
+
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0 0 !important;
+  //--background: #f3efef;
+}
+
+ion-toolbar{
+  min-height: 44px !important;
+  height: 44px;
+  .toolbar-container {
+    min-height: 44px !important;
+    height: 44px;
+  }
+
+  ::ng-deep .toolbar-background{
+    --border-width: 0 0 0 0;
+  }
+}
+
+.clase-Pop {
+  .popover-wrapper {
+    .popover-content {
+      top: 43px !important;
+      right: 15px !important;
+      left: auto !important;
+      width: 220px !important;
+    }
+  }
+}
+
+
+
+ion-buttons{
+  padding-bottom: 12px;
+  color: #fff;
+  ion-button{
+    --color:#fff;
+    button{
+      color: #fff;
+    }
+  }
+}
+
+.primary2 {
+  --background: map-get($colors, primary2);
+  ion-title {
+    --color: #fff;
+  }
+
+  ion-buttons {
+    ion-button {
+      --color: #fff !important;
+      --padding-start: 0px;
+      --padding-end: 0px;
+
+      ion-icon {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  ion-toolbar{
+   // --background-color: var(--primary);
+   --background: #0783bc;
+   
+  }
+}
+
+.primary {
+  --background: map-get($colors, primary2);
+  ion-title {
+    --color: #fff;
+  }
+
+  ion-buttons {
+    ion-button {
+      --color: #fff !important;
+      --padding-start: 0px;
+      --padding-end: 0px;
+
+      ion-icon {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  ion-toolbar{
+   // --background-color: var(--primary);
+   --background: #000;
+   
+  }
+}
+
+.primary3 {
+  --background: map-get($colors, primary2);
+  ion-title {
+    --color: #fff;
+  }
+
+  ion-buttons {
+    ion-button {
+      --color: #fff !important;
+      --padding-start: 0px;
+      --padding-end: 0px;
+
+      ion-icon {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  ion-toolbar{
+   // --background-color: var(--primary);
+   --background: #006b89;
+   
+  }
+}
+
+.primary4 {
+  --background: map-get($colors, primary2);
+  ion-title {
+    --color: #fff;
+  }
+
+  ion-buttons {
+    ion-button {
+      --color: #fff !important;
+      --padding-start: 0px;
+      --padding-end: 0px;
+
+      ion-icon {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  ion-toolbar{
+   // --background-color: var(--primary);
+   --background: #890000;
+   
+  }
+}
+
+.primary5 {
+  --background: map-get($colors, primary2);
+  ion-title {
+    --color: #fff;
+  }
+
+  ion-buttons {
+    ion-button {
+      --color: #fff !important;
+      --padding-start: 0px;
+      --padding-end: 0px;
+
+      ion-icon {
+        font-size: 22px !important;
+      }
+    }
+  }
+
+  ion-toolbar{
+   // --background-color: var(--primary);
+   --background: #056c24;
+   
+  }
+}
+

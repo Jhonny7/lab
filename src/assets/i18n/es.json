@@ -1,0 +1,27 @@
+{
+  "login": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "enter": "Entrar",
+    "lost_password": "Olvidé mi contraseña",
+    "register": "Registrarme"
+  },
+  "menu":{
+    "colaborators": "Colaboradores",
+    "members": "Miembros",
+    "news": "Noticias",
+    "product": "Productos",
+    "home": "Inicio",
+    "curriculum": "Perfil"
+  },
+  "options": {
+    "theme": "Tema",
+    "language": "Idioma",
+    "favorites": "Mis favoritos"
+  },
+  "home":{
+    "search": "¿Qué necesitas hoy?",
+    "contratar": "Contratar",
+    "buscar": "Trabajar"
+  }
+}

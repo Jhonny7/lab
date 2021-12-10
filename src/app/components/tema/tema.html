@@ -1,0 +1,10 @@
+<section class="tema render">
+  <div [style.background-image]="'url(' + imgUrl + tema.id_archivo + ')'">
+    <p>{{ tema.label ? tema.label : tema.descripcion }}</p>
+  </div>
+</section>
+<section class="tema-no-render">
+  <div >
+    <p>{{ tema.label ? tema.label : tema.descripcion }}</p>
+  </div>
+</section>

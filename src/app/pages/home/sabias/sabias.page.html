@@ -1,0 +1,34 @@
+<app-header [title]="'Sabías Qué...'" [backActive]="true"></app-header>
+
+<ion-content>
+
+  <section *ngIf="step == 1" class="temas">
+
+    <tema [tema]="t" *ngFor="let t of temas" (click)="cargarSabias()"></tema>
+
+  </section>
+
+  <section *ngIf="step == 2" class="sbs">
+      <p>{{ temaSelect.label }}</p>
+
+      <div *ngFor="let s of sabias" (click)="cargarSabiaUnico(s)">
+        {{ s.nombre }}
+      </div>
+  </section>
+
+  <section *ngIf="step == 3" class="galria">
+    <gallery-url [galleryItems]="imgsBanner"></gallery-url>
+    <p class="t-sbs">{{ sabiasSelect.nombre }}</p>
+
+    <div [innerHTML]="sabiasSelect.d2"></div>
+
+    <div class="lnks">
+      <p>Links de referencia</p>
+
+      <div *ngFor="let l of sabiasSelect.jsonArray" class="ar">
+        <a [href]="l.link" target="_blank">{{ l.link }}</a>
+      </div>
+    </div>
+  </section>
+
+</ion-content>

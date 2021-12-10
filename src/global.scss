@@ -1,0 +1,315 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import "./assets/css/animations.scss";
+@import "~swiper/swiper.min.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*Login global*/
+@import "./app/css-global/login.scss";
+//@import "./app/css-global/login.scss";
+
+@font-face {
+    font-family: digital;
+    src: url("./assets/fts/DS-DIGI.TTF");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: safe;
+    src: url("./assets/fts/safe.ttf");
+    font-weight: 200;
+}
+
+.popover-class {
+    .popover-wrapper {
+        .popover-content {
+            top: 25px !important;
+            left: unset !important;
+            right: 5px !important;
+        }
+
+        .popover-arrow:after {
+            display: none !important;
+        }
+    }
+
+    .popover-wrapper:after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: unset;
+        right: 12px;
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border-top: solid 10px transparent;
+        border-left: solid 10px transparent;
+        border-right: solid 10px transparent;
+        border-bottom: solid 10px #fff;
+    }
+}
+
+.ion-page {
+    background-color: #f3efef;
+    --ion-background-color: #f3efef;
+}
+
+ion-content {
+    position: unset;
+}
+
+body.swal2-height-auto {
+    height: inherit;
+}
+
+.swal2-container {
+    //position: relative !important;
+}
+
+.alerta-vista-warn {
+    .swal2-actions {
+        button {
+            background-color: #ffde46;
+            color: #5e5e5e;
+        }
+    }
+
+    .swal2-content {
+        div {
+            .mensaje {
+                p {
+                    font-weight: 600;
+                }
+            }
+
+            input {
+                outline: none;
+                padding: 5px;
+                margin: 0;
+                width: 100%;
+                border: 1px solid #cacaca;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+.alerta-vista-error {
+    .swal2-actions {
+        button {
+            background-color: #ff0707;
+            color: #fff;
+        }
+    }
+
+    .swal2-content {
+        div {
+            .mensaje {
+                p {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 0.35em;
+}
+
+table th,
+table td {
+    padding: 0.625em;
+    text-align: center;
+}
+
+table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+.mat-drawer-container {
+    height: -webkit-fill-available;
+}
+
+.mat-drawer-inner-container {
+    width: 230px !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #3498db !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #3498db !important;
+}
+
+.mat-dialog-container {
+    max-height: 500px !important;
+}
+
+.mat-drawer-content {
+    margin-left: 0px !important;
+}
+
+//Myself skeleton
+.skeleton-box {
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+    background-color: #dddbdd;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+            90deg,
+            rgba(#fff, 0) 0,
+            rgba(#fff, 0.2) 20%,
+            rgba(#fff, 0.5) 60%,
+            rgba(#fff, 0)
+        );
+        animation: shimmer 2s infinite;
+        content: "";
+    }
+
+    @keyframes shimmer {
+        100% {
+            transform: translateX(100%);
+        }
+    }
+}
+
+.trivia {
+    background-color: rgba(25, 25, 25, 0.88) !important;
+    border: 4px solid #3d9eff !important;
+    box-shadow: 1px 1px 124px #3d9eff;
+    .swal2-content {
+        div {
+            .mensaje {
+                p {
+                    margin: 0;
+                    color: #fff;
+                    font-size: 40px;
+                    animation: tada 1s infinite;
+                    line-height: 45px;
+                }
+            }
+
+            .descripcion {
+                p {
+                    margin: 0;
+                    color: #fff;
+                    font-size: 20px;
+                    margin-top: 20px;
+                    animation: pulse 1s infinite;
+                }
+            }
+        }
+    }
+}
+
+.mat-drawer-container{
+    height: 100%;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #3498db !important;
+}

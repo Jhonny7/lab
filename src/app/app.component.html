@@ -1,0 +1,35 @@
+<ion-menu side="start" contentId="main" *ngIf="user">
+  <section class="header-menu">
+    <img class="img-header" src="assets/imgs/login/fondoSham.png" alt="">
+
+    <section class="user">
+      <img src="assets/imgs/logo-sup.png" alt="" class="img-logo">
+
+      <div class="user-data">
+        <p>{{ user.nombre }} {{ user.apellido_paterno }}</p>
+        <p>{{ user.username }}</p>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="item-list">
+    <div *ngFor="let item of menus" class="itm"
+    [class]="{ 'active-menu': item.active  }" (click)="openPage(item)">
+      <ul class="father">
+        <li class="father-li">
+          <img [src]="item.icon" alt="">
+          <p>{{ item.name | translate }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <button class="close-sesion" (click)="close()">Cerrar sesión</button>
+  </section>
+</ion-menu>
+
+<ion-app>
+  <ion-router-outlet id="main" swipeBackEnabled="false"></ion-router-outlet>
+</ion-app>

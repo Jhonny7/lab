@@ -1,0 +1,348 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="true" >
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+    <section class="menu">
+      Menú
+    </section>
+
+    <section class="menus">
+      <div *ngFor="let menu of menus" (click)="open(menu)" class="menu-interno">
+        <span class="material-icons-outlined">
+          {{menu.icon}}
+        </span>
+        {{menu.title}}
+      </div>
+    </section>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <section class="sidenav-content">
+      <section class="header-admon">
+        <button type="button" mat-button (click)="drawer.toggle()" class="visual-menu">
+          <span class="material-icons">
+            list
+          </span>
+        </button>
+
+        <p>Administración</p>
+      </section>
+
+      <section [ngSwitch]="menuActivo" class="switch">
+        <section *ngSwitchCase="1">
+          <table>
+            <caption>Temas de interés</caption>
+            <thead>
+              <tr>
+                <th scope="col">Descripción</th>
+                <th scope="col">Imagen</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="temas && temas.length > 0">
+
+              <tr *ngFor="let tema of temas">
+                <td data-label="Descripción">{{ tema.label }}</td>
+
+                <td data-label="Imagen">
+                  <img [src]=" tema.url" alt="" *ngIf="tema.url">
+                </td>
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(tema)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(tema, tema.label)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!temas || temas.length == 0" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+
+        <section *ngSwitchCase="4">
+          <table>
+            <caption>Cápsulas informativas</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Tema</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="capsulas && capsulas.length > 0">
+
+              <tr *ngFor="let tema of capsulas">
+                <td data-label="Nombre">{{ tema.nombre }}</td>
+                <td data-label="Descripción">
+                  <div [innerHTML]="tema.descripcion"></div>
+                </td>
+                <td data-label="Tema">{{ tema.tema }}</td>
+
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(tema)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(tema)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!capsulas || capsulas.length == 0" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+
+        <section *ngSwitchCase="2">
+          <table>
+            <caption>Preguntas Frecuentes</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tema</th>
+                <th scope="col">Pregunta</th>
+                <th scope="col">Respuesta</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="preguntas && preguntas.length > 0">
+
+              <tr *ngFor="let pregunta of preguntas">
+                <td data-label="Tema">{{ pregunta.nombre }}</td>
+                <td data-label="Pregunta">
+                  <p class="pr">{{ pregunta.pregunta }}</p>
+                </td>
+                <td data-label="Respuesta">
+                  <p class="pr">{{ pregunta.respuesta }}</p>
+                </td>
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(pregunta)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(pregunta)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!temas || temas.length == 0 && menuActivo == 1" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+
+          <div *ngIf="!preguntas || preguntas.length == 0 && menuActivo == 2" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+        <section *ngSwitchCase="3">
+          <table>
+            <caption>Trivia</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tema</th>
+                <th scope="col">Complejidad</th>
+                <th scope="col">Pregunta</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="trivias && trivias.length > 0">
+
+              <tr *ngFor="let pregunta of trivias">
+                <td data-label="Tema">{{ pregunta.tema }}</td>
+                <td data-label="Complejidad">{{ pregunta.complejidad }}</td>
+                <td data-label="Pregunta">{{ pregunta.pregunta }}</td>
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(pregunta)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(pregunta)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!temas || temas.length == 0 && menuActivo == 1" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+
+          <div *ngIf="!preguntas || preguntas.length == 0 && menuActivo == 2" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+
+          <div *ngIf="!trivias || trivias.length == 0 && menuActivo == 3" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+
+
+        <section *ngSwitchCase="5">
+          <table>
+            <caption>Directorio</caption>
+            <thead>
+              <tr>
+                <th scope="col">Municipio</th>
+                <th scope="col">Domicilio</th>
+                <th scope="col">Nombre del lugar</th>
+                <th scope="col">Contacto</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="directorio && directorio.length > 0">
+
+              <tr *ngFor="let pregunta of directorio">
+                <td data-label="Estado">{{ pregunta.estado_combo }}</td>
+                <td data-label="Domicilio">{{ pregunta.domicilio }}</td>
+                <td data-label="Nombre del lugar">{{ pregunta.nombre_lugar }}</td>
+                <td data-label="Contacto">{{ pregunta.nombre_contacto }}</td>
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(pregunta)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(pregunta)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!directorio || directorio.length == 0 && menuActivo == 5"
+            style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+
+        <section *ngSwitchCase="6">
+          <table>
+            <caption>Sabías qué...</caption>
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="sabias && sabias.length > 0">
+
+              <tr *ngFor="let pregunta of sabias">
+                <td data-label="Nombre">{{ pregunta.nombre }}</td>
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(pregunta)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(pregunta)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!sabias || sabias.length == 0 && menuActivo == 6" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+
+        <section *ngSwitchCase="7">
+          <table>
+            <caption>Examen</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tema</th>
+                <th scope="col">Pregunta</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+              </tr>
+            </thead>
+
+            <tbody *ngIf="examenes && examenes.length > 0">
+
+              <tr *ngFor="let pregunta of examenes">
+                <td data-label="Tema">{{ pregunta.tema }}</td>
+                <td data-label="Pregunta">{{ pregunta.pregunta }}</td>
+
+                <td data-label="Editar" style="cursor: pointer;" (click)="edit(pregunta)">
+                  <span class="material-icons-outlined">
+                    build
+                  </span>
+                </td>
+
+                <td data-label="Eliminar" style="cursor: pointer;" (click)="delete(pregunta)">
+                  <span class="material-icons-outlined">
+                    delete
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div *ngIf="!examenes || examenes.length == 0 && menuActivo == 1" style="text-align: center;padding: 10px;">
+
+            Sin registros disponibles
+          </div>
+        </section>
+
+        <div class="add">
+          <button (click)="create()">
+            <span class="material-icons-outlined">
+              add
+            </span>
+          </button>
+        </div>
+      </section>
+    </section>
+  </mat-drawer-content>
+
+</mat-drawer-container>

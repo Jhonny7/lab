@@ -1,0 +1,37 @@
+<app-header [title]="'Inicio'"></app-header>
+
+<ion-content>
+
+  <container-app>
+
+    
+
+    <container>
+      <section class="secr">
+        <mat-select [(value)]="temaGlobal" (selectionChange)="select()">
+
+          <mat-option *ngFor="let category of temas" [value]="category.id">
+
+            <div class="enimg">
+              <img with="20" height="20" [src]="category.url " *ngIf="category.url">
+              <img with="20" height="20" src="assets/imgs/noAvail.jpeg" *ngIf="!category.url">
+            </div>
+
+            {{category.label}}
+
+          </mat-option>
+
+        </mat-select>
+      </section>
+
+      <section class="central">
+        <div *ngFor="let seccion of secciones" class="sec" (click)="goPage(seccion)">
+          <img [src]="seccion.icon">
+        </div>
+      </section>
+
+    </container>
+
+  </container-app>
+
+</ion-content>

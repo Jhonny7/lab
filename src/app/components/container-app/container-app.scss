@@ -1,0 +1,19 @@
+.container-app{
+  //background-color: #f3efef;
+  overflow-y: scroll;
+  padding-bottom: 50px;
+  padding: 5px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  height: -webkit-fill-available;
+}
+
+.container-app::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container-app {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}  
