@@ -1,0 +1,268 @@
+
+.wrapper {
+	width:90%; /* Establecemos que el ancho sera del 90% */
+	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+	margin:auto; /* Centramos los elementos */
+	overflow:hidden; /* Eliminamos errores de float */
+}
+
+section nav a:hover {
+	opacity: 0.6;
+	border-radius:50px;
+}
+
+.header2 {
+	position: fixed;
+    height:1%; 
+    width:100%;
+    margin-bottom:20px;
+}
+
+section {
+	width:100%;
+	overflow:hidden;
+	background:#252932;
+    margin-bottom:0px;
+    height: 10%;
+}
+.header_seccion{
+    width:100%; 
+	overflow:hidden;
+	background:white;
+    margin-bottom:20px;
+    height: 10%;  
+}
+
+
+
+.header2 .logos {
+    line-height:70px;
+    float: left;
+    font-size:50px;
+   opacity: 1;
+    animation-duration: 0.1s;
+    animation-name: slidein;
+
+}
+section .logos {
+	color:#f2f2f2;
+	font-size:50px;
+	line-height:70px;
+    float:left;
+  
+}
+.whats-container{
+    display: inline;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
+    span{
+        font-size: 21px;
+        vertical-align: middle;
+        color: #252932;
+        background: white;
+        border-radius: 25%;
+        transition: 0.3s;
+    }
+    p{
+        display: inline;
+        font-size: 17px;
+        transition: 0.3s;
+
+    }
+}
+.cellphone-container{
+    display: inline;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
+    span{
+        font-size: 21px;
+        vertical-align: middle;
+        color: #252932;
+        background: white;
+        border-radius: 25%;
+        transition: 0.3s;
+    }
+    p{
+        display: inline;
+        font-size: 17px;
+        transition: 0.3s;
+
+    }
+}
+.cellphone-container:hover{
+    span{
+        opacity: 0.6;
+    }
+    p{
+        opacity: 0.6;
+    }
+}
+
+.whats-container:hover{
+    span{
+        opacity: 0.6;
+    }
+    p{
+        opacity: 0.6;
+    }
+}
+.empresa-container{
+    display: initial;
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 8px 12px 8px 12px;
+    span{
+        font-size: 21px;
+        vertical-align: sub;
+        color:white;
+        transition: 0.3s;
+    }
+    p{
+        display: inline;
+        font-size: 17px;
+        transition: 0.3s;
+        color: white;
+
+    }
+}
+.empresa-container:hover{
+    opacity: 0.6;
+    span{
+        opacity: 0.6;
+    }
+    p{
+        opacity: 0.6;
+    }
+}
+.linea{
+    font-size: 30px !important;
+}
+
+.header2 nav {
+    float: right;
+    line-height:70px;
+    opacity: 1;
+    animation-duration: 0.1s;
+    animation-name: slidein;
+    color: #252932;
+}
+.header_seccion .wrapper .logos img{
+    width: 100px;
+}
+
+section nav {
+	float:right;
+	line-height:70px;
+}
+.header2 nav a {
+	display:inline;
+	color:#252932;
+	text-decoration:none;
+	padding:10px 20px;
+	line-height:normal;
+	font-size:20px;
+	font-weight:bold;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+
+section nav a {
+	display:inline;
+	color:#252932;
+	text-decoration:none;
+	padding:10px 20px;
+	line-height:normal;
+	font-size:20px;
+	font-weight:bold;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+.headerHide{
+    height: 0%;
+}
+
+
+@keyframes slidein {
+    from {
+       opacity: 0; 
+
+    }
+  
+    to {
+  opacity: 1;
+    }
+  }
+
+.header2, .header2 nav, .header2 nav .logos{
+    -webkit-transition:height 0.4s;
+    -moz-transition:height 0.4s;
+    -ms-transition:height 0.4s;
+    -o-transition:height 0.4s;
+    transition:height 0.4s;
+    }
+
+    section, section nav, section nav .logos{
+        -webkit-transition:height 0.4s;
+        -moz-transition:height 0.4s;
+        -ms-transition:height 0.4s;
+        -o-transition:height 0.4s;
+        transition:height 0.4s;
+        }
+
+.show{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    animation-name: showHeader;
+    animation-duration: 0.3s;
+    z-index: 99;
+}
+.hide{
+	position: fixed;
+    height:10%; 
+    width:100%;
+    animation-name: hideHeader;
+    animation-duration: 0.3s;
+    z-index: 99;
+}
+
+ 
+
+  .hide{
+    -webkit-transition:height 0.3s;
+    -moz-transition:height 0.3s;
+    -ms-transition:height 0.3s;
+    -o-transition:height 0.3s;
+    transition:height 0.3s;
+  }
+  .show{
+    -webkit-transition:height 0.3s;
+    -moz-transition:height 0.3s;
+    -ms-transition:height 0.3s;
+    -o-transition:height 0.3s;
+    transition:height 0.3s;
+  }
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

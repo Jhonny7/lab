@@ -1,0 +1,35 @@
+.container_services{
+    display: block;
+    width: 100%;
+    .title{
+
+    text-align: center;
+    font-size: 2.5rem;
+
+    }
+    .subcontainer_services{
+        display: inline-block;
+        width: 15%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        .icono{
+            font-size: 60px;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            transition: bottom 0.3s;
+            bottom: 2px;
+        }
+        .icono:hover{
+            bottom: 10px !important;
+            
+        }
+
+        .icono_title{
+            margin-top: 0px;
+            text-align: center;
+            font-size: 19px;
+        }
+    }
+}

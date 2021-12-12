@@ -1,0 +1,12 @@
+<div class="container_services">
+  <h1 class="title">NUESTROS SERVICIOS</h1>
+  <div class="subcontainer_services" *ngFor="let item of items">
+    <mat-card>
+      <span class="material-icons icono">
+        {{item.id}}
+        </span>
+    <h3 class="icono_title">{{item.name}}</h3>    
+    </mat-card>
+  </div>
+</div>
+<br>

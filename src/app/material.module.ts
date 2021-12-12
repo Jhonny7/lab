@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+
 import { MatCheckboxDefaultOptions, MatCheckboxModule, MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
 @NgModule({
     imports: [
@@ -24,7 +26,8 @@ import { MatCheckboxDefaultOptions, MatCheckboxModule, MAT_CHECKBOX_DEFAULT_OPTI
         MatDialogModule,
         MatRadioModule,
         MatSelectModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatCardModule
     ],
     exports:[
         MatToolbarModule,
@@ -35,7 +38,8 @@ import { MatCheckboxDefaultOptions, MatCheckboxModule, MAT_CHECKBOX_DEFAULT_OPTI
         MatDialogModule,
         MatRadioModule,
         MatSelectModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatCardModule
     ],
     providers:[
         //{provide: MAT_CHECKBOX_DEFAULT_OPTIONS, useValue: { clickAction: 'noop' } as MatCheckboxDefaultOptions}

@@ -34,6 +34,11 @@ import { TemaComponent } from './components/tema/tema';
 import { DirectorioComponent } from './pages/home/directorio/directorio.component';
 import { GalleryUrlComponent } from './components/gallery-url/gallery.component';
 import { AboutComponent } from './pages/home/about/about.component';
+import { HeaderHomeComponent } from './components/header-lab/header.component';
+import { HomeComponent } from './home/home.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { NuestrosServiciosComponent } from './components/nuestros-servicios/nuestros-servicios.component';
+
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
 }
@@ -66,7 +71,11 @@ export function createTranslateLoader(http: HttpClient) {
         DirectorioComponent,
         GalleryUrlComponent,
         AboutComponent,
-        ExamenPage
+        ExamenPage,
+        HeaderHomeComponent,
+        HomeComponent,
+        CarrouselComponent,
+        NuestrosServiciosComponent
     ],
     exports:[
         SpinnerOverlayComponent,
@@ -95,7 +104,11 @@ export function createTranslateLoader(http: HttpClient) {
         DirectorioComponent,
         GalleryUrlComponent,
         AboutComponent,
-        ExamenPage
+        ExamenPage,
+        HeaderHomeComponent,
+        HomeComponent,
+        CarrouselComponent,
+        NuestrosServiciosComponent
     ],
     imports: [
         CommonModule,

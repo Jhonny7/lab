@@ -17,6 +17,7 @@ import { ThemeGuard } from './guards/theme.guard';
 import { DirectorioComponent } from './pages/home/directorio/directorio.component';
 import { AboutComponent } from './pages/home/about/about.component';
 import { ExamenPage } from './pages/examen/examen.page';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
     path: 'about',
     component: AboutComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'homecito',
+    component: HomeComponent
   },
   {
     path: "trivia",

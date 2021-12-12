@@ -1,0 +1,10 @@
+<div (scroll)="doSomethingOnInternalScroll($event)" style="overflow: auto;">
+  
+  <header style="position: absolute;width: 100%;" [scroller]="scroller > 60"></header>
+  <section >
+    <app-carrousel [objImg]="objImg"></app-carrousel>
+    <br>
+    <nuestros-servicios></nuestros-servicios>
+</section>
+
+</div>
