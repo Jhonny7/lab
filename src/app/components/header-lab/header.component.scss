@@ -21,7 +21,7 @@ section nav a:hover {
 section {
 	width:100%;
 	overflow:hidden;
-	background:#252932;
+	background:var(--colorPrincipal);
     margin-bottom:0px;
     height: 10%;
 }
@@ -29,9 +29,63 @@ section {
     width:100%; 
 	overflow:hidden;
 	background:white;
-    margin-bottom:20px;
+    margin-bottom:0px;
     height: 10%;  
 }
+.showSearch{
+    width: 90%;
+    position: fixed;
+    /* overflow: auto; */
+    background: var(--colorPrincipal);
+    margin-bottom: 0px;
+    height: 7%;
+    border-radius: 0px 0px 8px 8px;
+    top: 140px;
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index: 99;
+    animation-duration: 0.3s;
+    input{
+       display: inline-block;
+    width: 98%;
+    margin: 1%;
+    height: 60%;
+    }
+}
+.hideSearch{
+    width: 90%;
+    position: fixed;
+    /* overflow: auto; */
+    background: var(--colorPrincipal);
+    margin-bottom: 0px;
+    height: 7%;
+    border-radius: 0px 0px 8px 8px;
+    top: 13px;
+    margin-left: 5%;
+    margin-right: 5%;
+    z-index: 99;
+    animation-duration: 0.3s;
+    input{
+       display: inline-block;
+    width: 98%;
+    margin: 1%;
+    height: 60%;
+    }
+}
+.hideSearch{
+    -webkit-transition:top 0.3s;
+    -moz-transition:top 0.3s;
+    -ms-transition:top 0.3s;
+    -o-transition:top 0.3s;
+    transition:top 0.3s;
+    }
+    .showSearch{
+        -webkit-transition:top 0.3s;
+        -moz-transition:top 0.3s;
+        -ms-transition:top 0.3s;
+        -o-transition:top 0.3s;
+        transition:top 0.3s;
+        }
 
 
 
@@ -59,7 +113,7 @@ section .logos {
     span{
         font-size: 21px;
         vertical-align: middle;
-        color: #252932;
+        color: var(--colorPrincipal);
         background: white;
         border-radius: 25%;
         transition: 0.3s;
@@ -79,7 +133,7 @@ section .logos {
     span{
         font-size: 21px;
         vertical-align: middle;
-        color: #252932;
+        color: var(--colorPrincipal);
         background: white;
         border-radius: 25%;
         transition: 0.3s;
@@ -149,7 +203,7 @@ section .logos {
     opacity: 1;
     animation-duration: 0.1s;
     animation-name: slidein;
-    color: #252932;
+    color: var(--colorPrincipal);
 }
 .header_seccion .wrapper .logos img{
     width: 100px;
@@ -161,7 +215,7 @@ section nav {
 }
 .header2 nav a {
 	display:inline;
-	color:#252932;
+	color:var(--colorPrincipal);
 	text-decoration:none;
 	padding:10px 20px;
 	line-height:normal;
@@ -174,7 +228,7 @@ section nav {
 
 section nav a {
 	display:inline;
-	color:#252932;
+	color: black;
 	text-decoration:none;
 	padding:10px 20px;
 	line-height:normal;
@@ -186,6 +240,12 @@ section nav a {
 }
 .headerHide{
     height: 0%;
+}
+.header_seccion .wrapper nav .search{
+    color: var(--colorPrincipal);
+    font-size: 30px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 
@@ -201,53 +261,55 @@ section nav a {
   }
 
 .header2, .header2 nav, .header2 nav .logos{
-    -webkit-transition:height 0.4s;
-    -moz-transition:height 0.4s;
-    -ms-transition:height 0.4s;
-    -o-transition:height 0.4s;
-    transition:height 0.4s;
+    -webkit-transition:height 0.3s;
+    -moz-transition:height 0.3s;
+    -ms-transition:height 0.3s;
+    -o-transition:height 0.3s;
+    transition:height 0.3s;
     }
 
     section, section nav, section nav .logos{
-        -webkit-transition:height 0.4s;
-        -moz-transition:height 0.4s;
-        -ms-transition:height 0.4s;
-        -o-transition:height 0.4s;
-        transition:height 0.4s;
+        -webkit-transition:height 0.3s;
+        -moz-transition:height 0.3s;
+        -ms-transition:height 0.3s;
+        -o-transition:height 0.3s;
+        transition:height 0.3s;
         }
 
 .show{
-    position: relative;
-    height: 100%;
+    position: fixed;
+    height: auto;
     width: 100%;
     animation-name: showHeader;
     animation-duration: 0.3s;
     z-index: 99;
+    top: 0px;
 }
 .hide{
-	position: fixed;
-    height:10%; 
-    width:100%;
-    animation-name: hideHeader;
+    position: fixed;
+    height: auto;
+    width: 100%;
+    animation-name: showHeader;
     animation-duration: 0.3s;
     z-index: 99;
+    top: -126px;
 }
 
  
 
   .hide{
-    -webkit-transition:height 0.3s;
-    -moz-transition:height 0.3s;
-    -ms-transition:height 0.3s;
-    -o-transition:height 0.3s;
-    transition:height 0.3s;
+    -webkit-transition:top 0.3s;
+    -moz-transition:top 0.3s;
+    -ms-transition:top 0.3s;
+    -o-transition:top 0.3s;
+    transition:top 0.3s;
   }
   .show{
-    -webkit-transition:height 0.3s;
-    -moz-transition:height 0.3s;
-    -ms-transition:height 0.3s;
-    -o-transition:height 0.3s;
-    transition:height 0.3s;
+    -webkit-transition:top 0.3s;
+    -moz-transition:top 0.3s;
+    -ms-transition:top 0.3s;
+    -o-transition:top 0.3s;
+    transition:top 0.3s;
   }
 
 

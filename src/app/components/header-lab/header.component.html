@@ -45,10 +45,13 @@
         <a href="#">Facturacion</a>
         <a href="#">Empresas</a>
         <a href="#">Contacto</a>
-        <span class="material-icons">
-          search
+        <span (click)="search()" class="material-icons search">
+          {{searchIcon}}
           </span>
       </nav>
     </div>
   </section>
 </div>
+    <section [ngClass]="{'hideSearch' : scroller, 'showSearch' : !scroller}">
+  <input type="text">
+    </section>

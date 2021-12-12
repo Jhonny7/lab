@@ -2,7 +2,7 @@
     display: block;
     width: 100%;
     .title{
-
+        color: var(--colorPrincipal);
     text-align: center;
     font-size: 2.5rem;
 
@@ -20,6 +20,7 @@
             position: relative;
             transition: bottom 0.3s;
             bottom: 2px;
+            color: var(--colorPrincipal);
         }
         .icono:hover{
             bottom: 10px !important;
@@ -30,6 +31,7 @@
             margin-top: 0px;
             text-align: center;
             font-size: 19px;
+            color: var(--colorPrincipal);
         }
     }
 }

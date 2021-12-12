@@ -1,9 +1,6 @@
 <div class="slideshow-container">
-
   <div class="mySlides fade" *ngFor="let item of objImg; let indexElmt = index">
-    <div class="numbertext">{{indexElmt+1}} / {{objImg.length}}</div>
     <img src="{{item.img}}" class="imagenes">
-    <div class="text">{{item.name}}</div>
   </div>
   
   

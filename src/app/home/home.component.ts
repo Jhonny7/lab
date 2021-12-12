@@ -13,15 +13,15 @@ export class HomeComponent implements OnInit {
   
   ngOnInit() {
     this.objImg = [{
-      img: 'https://areajugones.sport.es/wp-content/uploads/2015/03/reverse-flash.jpg',
+      img: 'https://tecnosolucionescr.net/templates/yootheme/cache/27_Lab_acreditado-e651d64b.png',
       name: 'Flash Reverso'
     },
   {
-    img: 'https://okdiario.com/img/series/2016/12/24/zoom.png',
+    img: 'https://media-adsa.camilyo.software/media-adsa/static/3886/894.jpg',
     name: 'Zoom'
   },
 {
-  img: 'https://i1.wp.com/codigoespagueti.com/wp-content/uploads/2021/11/The-Flash-Armageddon-Temporada-8.jpg?fit=1280%2C720&quality=80&ssl=1',
+  img: 'https://www.masbellezaysalud.com/wp-content/uploads/2021/04/Foro-Competencias-De-Laboratorios-Clinicos-Mas-Belleza-y-Salud.jpg',
   name: 'Flash'
 }]
   }
